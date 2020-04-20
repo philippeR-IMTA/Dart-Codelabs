@@ -88,9 +88,10 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
               margin: new EdgeInsets.symmetric(horizontal: 4.0),
               child: new IconButton(
                 icon: new Icon(Icons.send),
-                onPressed:
-                  ? () => _handleSubmitted(_textController.text)
-                  : null,
+                onPressed:  _isComposing
+                    ? () => _handleSubmitted(_textController.text)
+                    : null,
+              ),
             ),
           ],
         ),
